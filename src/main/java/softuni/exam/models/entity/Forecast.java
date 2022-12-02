@@ -16,7 +16,7 @@ import java.time.LocalTime;
 @Table(name = "forcasts")
 public class Forecast extends BaseEntity {
 
-    @Column(nullable = false)
+    @Column(name = "day_of_week", nullable = false)
     @Enumerated(EnumType.STRING)
     private DayOfWeek dayOfWeek;
 
