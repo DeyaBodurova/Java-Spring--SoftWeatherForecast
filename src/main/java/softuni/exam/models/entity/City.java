@@ -30,5 +30,5 @@ public class City extends BaseEntity {
     private Long population;
 
     @ManyToOne
-    private Country countries;
+    private Country country;
 }
