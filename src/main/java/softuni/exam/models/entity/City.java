@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @Getter
@@ -26,7 +27,7 @@ public class City extends BaseEntity {
     private String description;
 
     @Column(nullable = false)
-    @Size(min = 500)
+    @Min(value = 500)
     private Long population;
 
     @ManyToOne
