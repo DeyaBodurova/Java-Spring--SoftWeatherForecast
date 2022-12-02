@@ -1,15 +1,17 @@
 package softuni.exam.service;
 
 
-import java.io.IOException;
-import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import softuni.exam.repository.CountryRepository;
 
-// TODO: Implement all methods
+import java.io.IOException;
+
 public interface CountryService {
 
     boolean areImported();
 
     String readCountriesFromFile() throws IOException;
-	
-	String importCountries() throws IOException;
+
+    String importCountries() throws IOException;
 }
