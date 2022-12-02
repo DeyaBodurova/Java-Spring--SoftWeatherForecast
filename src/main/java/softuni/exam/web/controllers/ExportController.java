@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import softuni.exam.service.ForecastService;
 
+import javax.xml.bind.JAXBException;
+import java.io.FileNotFoundException;
+
 @Controller
 @RequestMapping("/export")
 public class ExportController extends BaseController {
@@ -21,7 +24,7 @@ public class ExportController extends BaseController {
 
 
     @GetMapping("/best-offers")
-    public ModelAndView exportOffersByAreaAndPrice() {
+    public ModelAndView exportOffersByAreaAndPrice() throws JAXBException, FileNotFoundException {
         String sundayForecasts = this.forecastService.exportForecasts();
 
         return super.view("export/export-sunday-forecasts.html", "sundayForecasts", sundayForecasts);
