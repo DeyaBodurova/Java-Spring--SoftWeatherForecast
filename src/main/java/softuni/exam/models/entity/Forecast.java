@@ -3,10 +3,11 @@ package softuni.exam.models.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import softuni.exam.models.entity.enums.DayOfWeek;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
-import java.time.DayOfWeek;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.time.LocalTime;
 
 @Getter
@@ -21,11 +22,13 @@ public class Forecast extends BaseEntity {
     private DayOfWeek dayOfWeek;
 
     @Column(name = "max_temperature", nullable = false)
-    @Size(min = -20, max = 60)
+    @Min(value = -20)
+    @Max(value = 60)
     private Double maxTemperature;
 
     @Column(name = "min_temperature", nullable = false)
-    @Size(min = -50, max = 40)
+    @Min(value = -50)
+    @Max(value = 40)
     private Double minTemperature;
 
     @Column(nullable = false)
